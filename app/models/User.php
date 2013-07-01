@@ -19,7 +19,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	        'password_confirmation'=>'Required|AlphaNum|Between:4,8'
 		);
 
-	public $timestamps = false;
+	public $timestamps = true;
 	
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -33,7 +33,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 *
 	 * @var array
 	 */
-	protected $fillable = array('nick', 'password');
+	protected $fillable = array('nick', 'password', 'active');
 	
 	/**
 	 * Get the unique identifier for the user.
@@ -65,14 +65,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->email;
 	}
 	
-	public function obslogs()
-	{
-	    return $this->has_many('Obslog');
-	}
-	
-	public function techlogs()
-	{
-	    return $this->has_many('Techlog');
-	}
+    public function gallery()
+    {
+        return $this->hasOne('Gallery');
+    }
 
 }
