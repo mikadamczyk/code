@@ -19,7 +19,7 @@
             <div>
             <h1>Laravel Logs</h1>
 
-            @yield('content')
+            @yield('main')
     
             </div>
         </div>
