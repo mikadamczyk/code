@@ -17,9 +17,9 @@
                 <li><a href="/logout"><i></i>Wyloguj</a></li>
                 @endif
                 <li><a href="/panel"><i></i>Panel</a></li>
-                
+            <?php echo URL::current(); ?>    
             @foreach (User::with('gallery')->get() as $user)
-                    <li><a href="/gallery/{{{ $user->id }}}"><i></i>{{{ $user->nick }}}</a></li>
+                    <li><a href="{{ URL::to('/gallery/'.$user->id ) }}"><i></i>{{{ $user->nick }}}</a></li>
             @endforeach
 </ul>
     
