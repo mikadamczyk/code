@@ -1,0 +1,18 @@
+.left-col{
+    width: 30%;
+    float: left;
+}
+.main{
+    width: 70%;
+    float: right;
+}
+
+.footer{
+    clear: both;
+    background-color: black;
+}
+ul.menu{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}

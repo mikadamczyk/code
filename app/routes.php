@@ -17,13 +17,24 @@
 // });
 Route::group(array('before' => 'auth'), function()
 {
+//     Route::get('/gallery/{id}', function($id)
+//     {
+//         return 'Gallery '.$id;
+//     });
+    Route::get('panel', function()
+    {
+        return 'Panel';
+    });
+    
+    Route::get('gallery', 'GalleryController@index');
+    Route::get('gallery/{id}', 'GalleryController@show');
+    
     Route::get('/', array('before' => 'auth' ,function()
     {
-        //return 'Hello, '.Auth::user()->email.'!';
-        //return Redirect::to('obslogs');
+        return Redirect::to('gallery');
     }));
     
-    Route::get('/logout', function() {
+    Route::get('logout', function() {
         Auth::logout();
         return Redirect::to('login');
     });

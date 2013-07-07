@@ -2,7 +2,7 @@
 
 @section('main')
 
-<h1>Login</h1>
+<h1>Logowanie</h1>
 <form method="post" action="/login">
 
             {{ Form::label('nick', 'Nick:') }}
@@ -11,7 +11,7 @@
             {{ Form::label('password', 'Password:') }}
             {{ Form::input('password', 'password') }}
 
-            {{ Form::submit('Submit', array('class' => 'btn')) }}
+            {{ Form::submit('Zaloguj', array('class' => 'btn')) }}
 {{ Form::close() }}
 
 @if ($errors->any())
