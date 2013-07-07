@@ -11,10 +11,15 @@
 
 // Set active slide function
 function setActiveSlide(i) {
-    
+	
+//	var idx =  $('#sl-thumbs li.selected').attr('jcarouselindex') - 2;
+//	console.log(i);
+	carousel = $('#sl-thumbs').data( 'jcarousel' );
+    carousel.scroll(i - 3, 0 );
+	
     // Update current position counter
     $('#count').html( (i + 1) + '/' + $('.sl-slide').length );
-       console.log((i + 1) + '/' + $('.sl-slide').length);
+//       console.log((i + 1) + '/' + $('.sl-slide').length);
     // Remove 'selected' class attribute from all jcarousel-items
     $('#sl-thumbs li').removeClass('selected'); 
 
@@ -43,10 +48,38 @@ function randomString(len) {
     return randomString;
 }
 
-
+function initCallbackFunction(carousel) {
+//	carousel.scroll(3);
+//    $('img').bind('image-loaded', function() {
+//    	 
+//        // find "index" data of the active thumbnail
+//        // and subtract by 2 to center
+//        var idx =  $('#sl-thumbs li.active').data('index') - 2;
+//        console.log(idx);
+//        // scroll carousel and center the active list item
+//        carousel.scroll(idx);
+//        return false;
+//    });
+	
+//    jQuery('#sl-thumbs img').bind('click', function() {
+//    	var idx =  $('#sl-thumbs li.selected').attr('jcarouselindex') - 2;
+//    	console.log(idx);
+//        carousel.scroll(idx, 0 );
+//        //return false;
+//    });
+};
 // Once DOM (document) is finished loading
 $(document).ready(function(){
-    $('#sl-thumbs').jcarousel();
+
+	
+    $('#sl-thumbs').jcarousel({
+        scroll: 1,
+        initCallback: initCallbackFunction
+    });
+	$('#sl-thumbs li').each(function(idx) {
+	    // add data 'index' with value idx+1
+	    $(this).data('index', (++idx));
+	});
     // Set ViewAllMode to 'false' value
 
     // Show controls, main slider section, ViewAll button and jcarousel container

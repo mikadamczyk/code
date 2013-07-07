@@ -62,6 +62,18 @@
             <h2 class="sl-title">Lost Angel</h2>
             <p><img src="{{ URL::asset('assets/images/10.jpg') }}" /> 'Lost Angel' image description</p>
         </div>
+        <div class="sl-slide">
+            <h2 class="sl-title">Lost Angel</h2>
+            <p><img src="{{ URL::asset('assets/images/11.jpg') }}" /> 'Lost Angel' image description</p>
+        </div>
+        <div class="sl-slide">
+            <h2 class="sl-title">Lost Angel</h2>
+            <p><img src="{{ URL::asset('assets/images/12.jpg') }}" /> 'Lost Angel' image description</p>
+        </div>
+        <div class="sl-slide">
+            <h2 class="sl-title">Lost Angel</h2>
+            <p><img src="{{ URL::asset('assets/images/13.jpg') }}" /> 'Lost Angel' image description</p>
+        </div>
     </div>
 
     <!-- jCarousel -->
@@ -76,6 +88,9 @@
         <li><img src="{{ URL::asset('assets/images/8t.jpg') }}" /></li>
         <li><img src="{{ URL::asset('assets/images/9t.jpg') }}" /></li>
         <li><img src="{{ URL::asset('assets/images/10t.jpg') }}" /></li>
+        <li><img src="{{ URL::asset('assets/images/11t.jpg') }}" /></li>
+        <li><img src="{{ URL::asset('assets/images/12t.jpg') }}" /></li>
+        <li><img src="{{ URL::asset('assets/images/13t.jpg') }}" /></li>
 
     </ul>
 
